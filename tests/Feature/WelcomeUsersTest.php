@@ -13,6 +13,7 @@ class WelcomeUsersTest extends TestCase
      */
    function it_welcomes_users_with_nickname()
     {
+    	
     	$this->get('saludo/duilio/silence')
     		->assertStatus(200)
     		->assertSee('Bienvenido Duilio, tu apodo es silence');

@@ -15,32 +15,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/usuarios', function () {
-    return 'Usuarios';
-});
+Route::get('/usuarios', 'UserController@index');
 
 
-Route::get('/usuarios/{id}', function($id){
-	return "Mostrando detalle del usuario: {$id}";
-})->where('id', '\d+');
+Route::get('/usuarios/{id}', 'UserController@show')
+	->where('id', '\d+');
 
 
-Route::get('/usuarios/nuevo', function(){
-	return 'Crear nuevo usuario';
-});
+Route::get('/usuarios/nuevo', 'UserController@create');
 
 
 
 
+Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');
 
-
-Route::get('/saludo/{name}/{nickname?}', function($name, $nickname = null){
-
-	$name = ucfirst($name);
-	
-	if ($nickname) {
-		return "Bienvenido {$name}, tu apodo es {$nickname}";
-	}else{
-		return "Bienvenido {$name}";
-	}
-});
+Route::get('usuarios/{id}/edit', 'UserController@edit')->where('id', '[0-9]+');

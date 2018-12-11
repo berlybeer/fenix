@@ -10,7 +10,7 @@ class UsersModuleTest extends TestCase
 {
     /**
     * @test */
-    function test_it_loads_the_users_list_page()
+    function it_loads_the_users_list_page()
     {
         $this->get('/usuarios')
         	->assertStatus(200)
@@ -32,9 +32,26 @@ class UsersModuleTest extends TestCase
     * @test */
     function it_loads_the_new_users_page()
     {
+  
         $this->get('/usuarios/nuevo')
         	->assertStatus(200)
         	->assertSee('Crear nuevo usuario');
+
+    }
+
+        /**
+    * @test */
+    function it_loads_the_users_edit_page()
+    {
+
+        $this->get('/usuarios/5/edit')
+        	->assertStatus(200)
+        	->assertSee('Editar usuario con id: 5');
+
+
+        $this->get('/usuarios/nuevo/edit')
+        	->assertStatus(404)
+        	->assertDontSee('Editar usuario con id: nuevo');
 
     }
 }
