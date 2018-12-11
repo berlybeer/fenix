@@ -25,37 +25,15 @@ class UserController extends Controller
     	$title = 'Listado de usuarios';
   
 
-    	return view('users' ,compact('title', 'users'));
+    	return view('users.index' ,compact('title', 'users'));
     }
 
     public function show($id)
     {
-    	switch ($id) {
-    		case '1':
-    			$user = 'Juanon';# code...
-    			break;
-    		case '2':
-    			$user = 'Mamon';# code...
-    		break;
 
-    		case '3':
-    			$user = 'Rafa';# code...
-    			break;
-    		case '4':
-    			$user = 'Duilio';# code...
-    		break;
-
-    		case '5':
-    			$user = 'Ramon';# code...
-    			break;
-
-    		default:
-    		
-    			break;
-    	}
 
     	$title = "Mostrando detalle del usuario: {$id}";
-    	return view('show', compact('title', 'user'));
+    	return view('users.show', compact('title', 'id'));
 
 
     }
