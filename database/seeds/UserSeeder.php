@@ -23,6 +23,8 @@ class UserSeeder extends Seeder
 
     	$professionId2 = DB::table('professions')->where('title','Desarrollador front-end')->value('id');
 
+    
+
 
 
         User::create([
