@@ -21,10 +21,8 @@ class UserController extends Controller
 
     public function show($id)
     {
-
-
-    	$title = "Mostrando detalle del usuario: {$id}";
-    	return view('users.show', compact('title', 'id'));
+    	$user = User::find($id);
+    	return view('users.show', compact('user'));
 
 
     }
