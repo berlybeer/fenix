@@ -30,3 +30,6 @@ Route::get('/usuarios/nuevo', 'UserController@create');
 Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');
 
 Route::get('usuarios/{id}/edit', 'UserController@edit')->where('id', '[0-9]+');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
