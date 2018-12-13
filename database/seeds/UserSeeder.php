@@ -19,9 +19,11 @@ class UserSeeder extends Seeder
     	// 	'title' => 'Desarrollador back-end',
     	// ]);
 
-    	$professionId = Profession::where('title','Desarrollador back-end')->value('id');
+    	$professionId = Profession::where('title','Desarrollador Back-end')->value('id');
 
-    	$professionId2 = DB::table('professions')->where('title','Desarrollador front-end')->value('id');
+    	$professionId2 = DB::table('professions')->where('title','Desarrollador Front-end')->value('id');
+
+    	$professionId3 = DB::table('professions')->where('title','Diseñador Web')->value('id');
 
     
 
@@ -32,7 +34,24 @@ class UserSeeder extends Seeder
         	'email' => 'berly@pumacajia.com',
         	'password' => bcrypt('laravel'),
         	'profession_id' => $professionId,
+        	'is_admin' => true
         ]);
+
+
+        User::create([
+           	'name' => 'Leo Davinci',
+        	'email' => 'leo@davinci.com',
+        	'password' => bcrypt('laravel'),
+        	'profession_id' => $professionId,
+        ]);
+
+        User::create([
+           	'name' => 'Daniel Fugaz',
+        	'email' => 'daniel@fugaz.com',
+        	'password' => bcrypt('laravel'),
+        	'profession_id' => null,
+        ]);
+
 
 
 

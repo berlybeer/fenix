@@ -32,6 +32,13 @@ class User extends Authenticatable
         'is_admin' => 'boolean'
     ];
 
+    public function profession() //profession + _id = profession_id
+    {
+        return $this->belongsTo(Profession::class);
+        //si tabla de la bd no cumple con esta convencion la pasamos como segundo argumento:
+        //return $this->belongsTo(Profession::class, 'id_profession')
+    }
+
     public static function findByEmail($email)
     {
 
@@ -40,6 +47,6 @@ class User extends Authenticatable
 
     public function isAdmin()
     {
-        return $this->email == 'berly@pumacajia.com';
+        return $this->is_admin;
     }
 }
