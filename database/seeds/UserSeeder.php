@@ -45,9 +45,6 @@ class UserSeeder extends Seeder
 
 
 
-
-
-
         DB::insert('INSERT INTO users(name, email, password, profession_id) VALUES (:name, :email,:password, :profession_id)', ['name' => 'serafin', 'email' => 'era@fin.com', 'password' => bcrypt('laravel'), 'profession_id' => $professionId2]);
 
         DB::delete('DELETE FROM users WHERE name = "serafin"');
