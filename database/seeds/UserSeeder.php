@@ -29,7 +29,7 @@ class UserSeeder extends Seeder
 
 
 
-        User::create([
+        factory(User::class)->create([
            	'name' => 'Berly Pumaccajia',
         	'email' => 'berly@pumacajia.com',
         	'password' => bcrypt('laravel'),
@@ -37,20 +37,13 @@ class UserSeeder extends Seeder
         	'is_admin' => true
         ]);
 
-
-        User::create([
-           	'name' => 'Leo Davinci',
-        	'email' => 'leo@davinci.com',
-        	'password' => bcrypt('laravel'),
-        	'profession_id' => $professionId,
+        factory(User::class)->create([
+        	'profession_id' => $professionId
         ]);
 
-        User::create([
-           	'name' => 'Daniel Fugaz',
-        	'email' => 'daniel@fugaz.com',
-        	'password' => bcrypt('laravel'),
-        	'profession_id' => null,
-        ]);
+        factory(User::class, 48)->create();
+
+
 
 
 
