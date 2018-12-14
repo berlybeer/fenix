@@ -1,5 +1,7 @@
 <?php
 
+use App\Post;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,6 +19,14 @@ Route::get('/', function () {
 
 Route::get('/usuarios', 'UserController@index')->name('users.index');
 
+Route::get('posts/{post}/edit', function(Post $post){
+	return 'Edit the post ' . $post->title;
+});
+
+
+Route::get('post/{post?}', function (Post $post = null){
+	dd($post);
+});
 
 Route::get('/usuarios/{user}', 'UserController@show')
 	->where('user', '\d+')->name('users.show');
