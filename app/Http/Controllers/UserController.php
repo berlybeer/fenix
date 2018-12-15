@@ -29,15 +29,12 @@ class UserController extends Controller
 
     public function create()
     {
-    	$mamones = [
-    		'Juanon',
-    		'Mamon',
-    		'Rafa'
-    	];
-
-    	$title = "Crear nuevo usuario";
-    	return view('create', compact('mamones', 'title'));
+        return view('users.create');
     }
+
+    public function store()
+    {
+        return view('users.create');    }
 
     public function edit($id)
     {
