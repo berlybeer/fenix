@@ -99,4 +99,24 @@ class UsersModuleTest extends TestCase
         	->assertDontSee('Editar usuario con id: nuevo');
 
     }
+
+    /**
+    * @test */
+    function it_creates_a_new_user()
+    {
+        $this->withoutExceptionHandling();
+
+        $this->post('/usuarios/', [
+            'name' => 'Duilo',
+            'email' => 'duilio@styde.net',
+            'password' => '123456'
+        ])->assertRedirect('usuarios');
+
+       $this->assertCredentials([
+            'name' => 'Duilo',
+            'email' => 'duilio@styde.net',
+            'password' => '123456'
+        ]);
+
+    }    
 }
