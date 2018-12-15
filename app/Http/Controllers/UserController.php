@@ -36,11 +36,22 @@ class UserController extends Controller
     {
 
         $data = request()->validate([
-            'name' => 'required'
+            'name' => 'required',
+            'email' => ['required','email','unique:users,email'],
+            'password' => 'required|max:6',
+
         ],[
-            'name.required' => 'El campo nombre es obligatorio'
+            'name.required' => 'El campo nombre es obligatorio',
+            'email.required' => 'El campo email es obligatorio',
+            'email.unique' => 'El campo email debe ser unico',
+            'password.required' => 'El campo password es obligatorio',
+            'password.max' => 'El campo password debe tener máximo 6 caracteres',
+
+
         ]);
 
+
+        
         // if(empty($data['name'])){
         //     return redirect('usuarios/nuevo')->withErrors([
         //         'name' => 'El campo es obligatorio'
@@ -56,7 +67,7 @@ class UserController extends Controller
             'password' => bcrypt($data['password'])
         ]);
 
-    return redirect()->route('users.index');
+        return redirect()->route('users.index');
     }
 
     public function edit($id)

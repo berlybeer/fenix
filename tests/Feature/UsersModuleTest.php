@@ -80,7 +80,7 @@ class UsersModuleTest extends TestCase
   
         $this->get('/usuarios/nuevo')
         	->assertStatus(200)
-        	->assertSee('Crear nuevo usuario');
+        	->assertSee('Crear usuario');
 
     }
 
@@ -104,7 +104,7 @@ class UsersModuleTest extends TestCase
     * @test */
     function it_creates_a_new_user()
     {
-       
+       $this->withoutExceptionHandling();
 
         $this->post('/usuarios/', [
             'name' => 'Duilo',
@@ -133,10 +133,80 @@ class UsersModuleTest extends TestCase
             ])->assertRedirect('usuarios/nuevo')
             ->assertSessionHasErrors(['name' => 'El campo nombre es obligatorio']);
 
-        $this->assertDatabaseMissing('users',[
-            'email' =>'duilio@styde.net'
-        ]);
+        $this->assertEquals(0, User::count());
+    }  
+
+    /**
+    * @test */
+    function the_email_is_required()
+    {
+       
+
+        $this->from('usuarios/nuevo')
+            ->post('/usuarios/', [
+            'name' => 'Duilio',
+            'email' => '',
+            'password' => '123456'
+            ])->assertRedirect('usuarios/nuevo')
+            ->assertSessionHasErrors(['email']);
 
         $this->assertEquals(0, User::count());
-    }    
+    } 
+
+    /**
+    * @test */
+    function the_email_must_be_valid()
+    {
+       
+
+        $this->from('usuarios/nuevo')
+            ->post('/usuarios/', [
+            'name' => 'Duilio',
+            'email' => 'correo-no-valido',
+            'password' => '123456'
+            ])->assertRedirect('usuarios/nuevo')
+            ->assertSessionHasErrors(['email']);
+
+        $this->assertEquals(0, User::count());
+    } 
+
+    /**
+    * @test */
+    function the_email_must_be_unique()
+    {
+
+        // $this->withoutExceptionHandling();
+
+       factory(User::class)->create([
+            'email' => 'email@existente.com',
+       ]);
+
+        $this->from('usuarios/nuevo')
+            ->post('/usuarios/', [
+            'name' => 'Duilio',
+            'email' => 'email@existente.com',
+            'password' => '123456'
+            ])->assertRedirect('usuarios/nuevo')
+            ->assertSessionHasErrors(['email']);
+
+        $this->assertEquals(1, User::count());
+    } 
+
+
+
+    /**
+    * @test */
+    function the_password_is_required()
+    {
+        $this->from('usuarios/nuevo')
+            ->post('/usuarios/', [
+            'name' => 'Duilio',
+            'email' => 'duilio@styde.net',
+            'password' => ''
+            ])->assertRedirect('usuarios/nuevo')
+            ->assertSessionHasErrors(['password']);
+
+        $this->assertEquals(0, User::count());
+    }       
+
 }
