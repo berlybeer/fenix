@@ -70,19 +70,11 @@ class UserController extends Controller
         return redirect()->route('users.index');
     }
 
-    public function edit($id)
+    public function edit(User $user)
     {
 
-    	 $personas = [
-    		1 => 'Javiera',
-    		2 => 'Eugenia',
-    		3 => 'Yolo'
-    	];
-
-
-
-    	$title = "Editar usuario con id: {$id}"; 
-    	return view('edit', compact('personas', 'title','id'));
+ 
+    	return view('users.edit', ['user' => $user]);
     }
 
 
