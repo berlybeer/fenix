@@ -77,12 +77,12 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <router-link to="/dashboard" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-               Dashboard
+                Dashboard
               </p>
             </router-link>
           </li>
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link active">
+            <a href="#" class="nav-link">
               <i class="nav-icon fa fa-cog"></i>
               <p>
                 Management
@@ -106,7 +106,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
           </li>
           <li class="nav-item">
             <router-link to="/profile" class="nav-link">
-              <i class="nav-icon fa fa-power-off"></i>
+              <i class="nav-icon fa fa-user"></i>
               <p>
                Profile
               </p>
@@ -114,7 +114,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
          </li>
           <li class="nav-item">
             <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-user"></i>
+              <i class="nav-icon fas fa-power-off"></i>
               <p>
                Logout
               </p>

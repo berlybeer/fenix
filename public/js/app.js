@@ -13961,6 +13961,7 @@ var routes = [{ path: '/dashboard', component: __webpack_require__(67) }, { path
 // You can pass in additional options here, but let's
 // keep it simple for now.
 var router = new __WEBPACK_IMPORTED_MODULE_0_vue_router__["a" /* default */]({
+  mode: 'history',
   routes: routes // short for `routes: routes`
 });
 
