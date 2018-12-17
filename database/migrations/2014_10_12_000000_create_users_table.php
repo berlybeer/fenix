@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->string('type')->default('users');
             $table->mediumText('bio')->nullable();
-            $table->string('photo')->default('customer-support.png');
-            $table->boolean('is_admin')->default(false);
+            $table->string('photo')->default('customer-support.png')->nullable();
+            $table->boolean('is_admin')->default(false)->nullable();
             
             $table->rememberToken();
             $table->timestamps();
