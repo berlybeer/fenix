@@ -34,7 +34,7 @@ class UserController extends Controller
 
     public function store()
     {
-
+    
         $data = request()->validate([
             'name' => 'required',
             'email' => ['required','email','unique:users,email'],
@@ -73,18 +73,30 @@ class UserController extends Controller
     public function edit(User $user)
     {
 
- 
     	return view('users.edit', ['user' => $user]);
     }
 
     public function update(User $user)
     {
 
-        $data = request()->all();
+        //   $data = request()->validate([
+        //     'name' => 'required',
+        //     'email' => ['required','email','unique:users,email'],
+        //     'password' => 'required|max:6',
+
+        // ]
+
+
+
+        $data = request()->validate([
+            'name' => 'required',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'required',
+        ]);
         $data['password'] = bcrypt($data['password']);
         $user->update($data);
-        // return redirect()->route('users.show', ['user'=>$user]);
-        return redirect("/usuarios/{$user->id}");
+        return redirect()->route('users.show', ['user'=>$user]);
+        // return redirect("/usuarios/{$user->id}");
     }
 
 

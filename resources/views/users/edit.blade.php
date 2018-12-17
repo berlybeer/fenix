@@ -8,18 +8,19 @@
 			@if($errors->any())
 			<div class="alert alert-danger col-md-6">
 				<h6>Por favor corrige estos errores debajo:</h6>
-{{-- 				<ul>
+				<ul>
 					@foreach($errors->all() as $error)
 						<li>{{$error}}</li>
 					@endforeach				
-				</ul> --}}
+				</ul>
 
 			</div>
 
 
 			@endif
 
-			<form class="needs-validation" action="{{ url('/usuarios')}}" method="POST">
+			<form action="{{ url("/usuarios/$user->id")}}" method="POST">
+			{{method_fieLd('PUT')}}
 			{!!csrf_field()!!}
 
 			  <div class="form-row">
@@ -63,7 +64,7 @@
 		  
 
 
-				<button class="btn btn-primary" type="submit">Crear usuario</button>
+				<button class="btn btn-primary" type="submit">Actualizar usuario</button>
 				
 			</form>
 			<p class="mt-3">
