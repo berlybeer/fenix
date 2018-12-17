@@ -302,26 +302,55 @@ class UsersModuleTest extends TestCase
     function the_email_must_be_unique_when_updating_the_user()
     {
 
-        self::markTestIncomplete();
-        return;
+       factory(User::class)->create([
+            'email' => 'existing-email@example.com',
+        ]);
+
 
         // $this->withoutExceptionHandling();
 
        $user = factory(User::class)->create([
-            'email' => 'email@existente.com',
+            'email' => 'berly@pumacajia.com',
        ]);
 
         $this->from("usuarios/{$user->id}/editar")
                   ->put("usuarios/{$user->id}", [
-            'name' => 'Duilio Palacios',
-            'email' => 'email@existente.com',
+            'name' => 'Berly Pumacajia',
+            'email' => 'existing-email@example.com',
             'password' => '123456'
             ])
             ->assertRedirect("usuarios/{$user->id}/editar")
             ->assertSessionHasErrors(['email']);
 
-        $this->assertEquals(1, User::count());
+
     } 
+
+    /**
+    * @test */
+    function the_users_email_can_stay_the_same_when_updating_the_user()
+    {
+
+       $user = factory(User::class)->create([
+            'email' => 'duilio@styde.net'
+       ]);
+
+        $this->from("usuarios/{$user->id}/editar")
+                  ->put("usuarios/{$user->id}", [
+            'name' => 'Duilio',
+            'email' => 'duilio@styde.net',
+            'password' => '12345678'
+            ])
+            ->assertRedirect("usuarios/{$user->id}");
+
+
+        $this->assertDatabaseHas('users', [
+            'name' => 'Duilio',
+            'email' => 'duilio@styde.net',
+
+
+        ]);
+    }                       
+
 
 
 
@@ -352,6 +381,7 @@ class UsersModuleTest extends TestCase
             'password' => $oldPassword,
 
         ]);
-    }                  
+    }
+
 
 }
