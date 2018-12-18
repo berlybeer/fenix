@@ -21,6 +21,15 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
+import VueProgressBar from 'vue-progressbar'
+
+Vue.use(VueProgressBar, {
+  color: 'rgb(143, 255, 199)',
+  failedColor: 'red',
+  height: '5px'
+	})
+
+
 	// 1. Define route components.
 	// These can be imported from other files
 
