@@ -71140,7 +71140,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     }
   },
   created: function created() {
+    var _this2 = this;
+
     this.loadUsers();
+    setInterval(function () {
+      return _this2.loadUsers();
+    }, 3000);
   }
 });
 
