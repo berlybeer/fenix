@@ -53,11 +53,11 @@
     <main role="main" class="container">
     
      <div class="row mt-3">
-        <div class="col-10">
+        <div class="col-8">
             @yield('content')
         </div>
 
-        <div class="col-2">
+        <div class="col-4">
           @section('sidebar')
             <h2>Barra lateral</h2>
           @show
