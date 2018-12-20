@@ -33,8 +33,6 @@
 		       				{{$errors->first('name')}}
 		      			</p>
 					      @endif
-
-
 					    </div>
 				
 
@@ -61,6 +59,28 @@
 		      			  </p>
 					      @endif
 					    </div>
+
+					    <div class="form-group">
+					      <label for="name">Bio:</label>
+					     <textarea name="bio" id="bio" class="form-control">{{ old('bio') }}</textarea>
+					      @if($errors->has('bio'))
+					      <p>
+		       				{{$errors->first('bio')}}
+		      			</p>
+					      @endif
+					    </div>
+
+					    <div class="form-group">
+					      <label for="name">Twitter:</label>
+					      <input type="text" class="form-control" id="twitter" name="twitter" placeholder="" value={{old('twitter')}}>
+					      @if($errors->has('twitter'))
+					      <p>
+		       				{{$errors->first('twitter')}}
+		      			</p>
+					      @endif
+					    </div>
+
+
 
 				  
 

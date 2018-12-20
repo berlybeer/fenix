@@ -42,7 +42,7 @@
 	  </tbody>
 	</table>
 	@else
-		<p>No hay usuario registrados</p>
+		<p>No hay usuarios registrados</p>
 	@endif
 
 	<hr>

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreateUserRequest;
 use App\User;
+use App\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Validation\Rule;
@@ -33,40 +35,11 @@ class UserController extends Controller
         return view('users.create');
     }
 
-    public function store()
+    public function store(CreateUserRequest $request)
     {
     
-        $data = request()->validate([
-            'name' => 'required',
-            'email' => ['required','email','unique:users,email'],
-            'password' => 'required|max:6',
-
-        ],[
-            'name.required' => 'El campo nombre es obligatorio',
-            'email.required' => 'El campo email es obligatorio',
-            'email.unique' => 'El campo email debe ser unico',
-            'password.required' => 'El campo password es obligatorio',
-            'password.max' => 'El campo password debe tener máximo 6 caracteres',
-
-
-        ]);
-
-
-        
-        // if(empty($data['name'])){
-        //     return redirect('usuarios/nuevo')->withErrors([
-        //         'name' => 'El campo es obligatorio'
-        //     ]);
-        // }
-
-
-
-
-        User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password'])
-        ]);
+        $request->createUser();
+     
 
         return redirect()->route('users.index');
     }
