@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class UserProfile extends Model
 {
-    protected $fillable = ['bio' , 'twitter', 'github'];
+	// protected $guarded = [];
+    protected $fillable = ['bio' , 'twitter', 'github', 'profession_id'];
 }

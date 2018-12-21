@@ -70,6 +70,17 @@
 					      @endif
 					    </div>
 
+					    <div class="form group">
+					    	<label for="profession_id">Professión</label>
+					    	<select name="profession_id" id="profession_id" class="form-control">
+					    		<option value="">Selecciona un valor</option>
+					    		@foreach($professions as $profession)
+				
+					    		<option value="{{$profession->id}}"{{ old('profession_id') ==$profession->id ? ' selected' : ''}}>{{$profession->title}}</option>
+					    		@endforeach
+					    	</select>
+					    </div>
+
 					    <div class="form-group">
 					      <label for="name">Twitter:</label>
 					      <input type="text" class="form-control" id="twitter" name="twitter" placeholder="" value={{old('twitter')}}>
