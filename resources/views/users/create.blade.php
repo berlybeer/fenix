@@ -11,6 +11,7 @@
 					@if($errors->any())
 					<div class="alert alert-danger">
 						<h6>Por favor corrige estos errores debajo:</h6>
+
 						<ul>
 							@foreach($errors->all() as $error)
 								<li>{{$error}}</li>
@@ -91,15 +92,30 @@
 					      @endif
 					    </div>
 
+						<h4>Habilidades</h4>
+						
+						@foreach($skills as $skill)
+					    <div class="form-check form-check-inline">
+						  <input name="skills[{{$skill->id}}]" 
+						  		class="form-check-input" 
+						  		type="checkbox" 
+						  		id="skill_{{$skill->id}}" 
+						  		value="{{$skill->id}}"
+						  		{{old("skills.{$skill->id}") ? 'checked' : ''}}>
+						  <label class="form-check-label" for="skill_{{$skill->id}}">{{$skill->name}}</label>
+						</div>
+						@endforeach
 
 
 				  
 
-
-						<button class="btn btn-primary" type="submit">Crear usuario</button>
-						<p class="mt-3 btn btn-link" >
-						<a href="{{route("users.index")}}">Regresar</a>
+						<div class="form-group mt-4">
+							<button class="btn btn-primary" type="submit">Crear usuario</button>
+							<p class="mt-3 btn btn-link" >
+							<a href="{{route("users.index")}}">Regresar</a>
 						</p>
+						</div>
+
 					</form>					
 				</div>
 			</div>
