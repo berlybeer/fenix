@@ -106,6 +106,21 @@
 						</div>
 						@endforeach
 
+						<h4 class="mt-3">Roles</h4>
+
+						@foreach($roles as $role => $name) 
+
+						<div class="form-check form-check-inline">
+						  <input class="form-check-input" 
+						  		type="radio" 
+						  		name="role" 
+						  		id="role_{{$role}}" 
+						  		value="{{$role}}"
+						  		{{old('role') == $role ? 'checked': ''}}>
+						  <label class="form-check-label" for="role_{{$role}}">{{$name}}</label>
+						</div>
+
+						@endforeach
 
 				  
 
