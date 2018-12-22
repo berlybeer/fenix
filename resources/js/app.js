@@ -58,6 +58,7 @@ Vue.use(VueProgressBar, {
 	// We'll talk about nested routes later.
 
 let routes = [
+  { path: '/developer', component: require('./components/Developer.vue') },
   { path: '/dashboard', component: require('./components/Dashboard.vue') },
   { path: '/profile', component: require('./components/Profile.vue') },
   { path: '/users', component: require('./components/Users.vue') }
@@ -88,6 +89,22 @@ window.Fire = new Vue();
  *
  * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
  */
+
+Vue.component(
+    'passport-clients',
+    require('./components/passport/Clients.vue')
+);
+
+Vue.component(
+    'passport-authorized-clients',
+    require('./components/passport/AuthorizedClients.vue')
+);
+
+Vue.component(
+    'passport-personal-access-tokens',
+    require('./components/passport/PersonalAccessTokens.vue')
+);
+
 
 Vue.component('example-component', require('./components/ExampleComponent.vue'));
 
