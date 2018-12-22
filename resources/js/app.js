@@ -15,10 +15,10 @@ import { Form, HasError, AlertError } from 'vform';
 
 
 import Swal from 'sweetalert2'
-window.swal = Swal;
+window.Swal = Swal;
 
  
-const toast = swal.mixin({
+const toast = Swal.mixin({
   toast: true,
   position: 'top-end',
   showConfirmButton: false,
