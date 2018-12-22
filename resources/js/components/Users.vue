@@ -41,7 +41,7 @@
                     <td>{{user.id}}</td>
                     <td>{{user.name}}</td>
                     <td>{{user.email}}</td>
-                    <td>{{user.type|upText}}</td>
+                    <td>{{user.type | upText}}</td>
                     <td>{{user.created_at|myDate}}</td>
                     <td>
                         <a href="#">Edit
@@ -143,11 +143,12 @@
       },
       methods:{
         loadUsers(){
-          axios.get("api/user").then(({data}) => (this.users = data.data));
+          axios.get("api/user").then(({ data }) => (this.users = data.data));
         },
         createUser(){
           this.$Progress.start();
           this.form.post('api/user');
+          Fire.$emit('AfterCreate');
           $('#addNew').modal('hide')
 
           toast({
@@ -160,7 +161,10 @@
       },
       created() {
           this.loadUsers();
-          setInterval(()=>this.loadUsers(), 3000)
+          Fire.$on('AfterCreate',()=>{
+            this.loadUsers();
+          });
+          // setInterval(()=>this.loadUsers(), 3000);
       }
     }
 </script>

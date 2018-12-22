@@ -30629,15 +30629,14 @@ var router = new __WEBPACK_IMPORTED_MODULE_3_vue_router__["a" /* default */]({
 });
 
 Vue.filter('upText', function (text) {
-
   return text.charAt(0).toUpperCase() + text.slice(1);
 });
 
 Vue.filter('myDate', function (created) {
-
   return __WEBPACK_IMPORTED_MODULE_0_moment___default()(created).format('MMMM Do YYYY');
 });
 
+window.Fire = new Vue();
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue
@@ -71129,6 +71128,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     createUser: function createUser() {
       this.$Progress.start();
       this.form.post('api/user');
+      Fire.$emit('AfterCreate');
       $('#addNew').modal('hide');
 
       toast({
@@ -71143,9 +71143,10 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
     var _this2 = this;
 
     this.loadUsers();
-    setInterval(function () {
-      return _this2.loadUsers();
-    }, 3000);
+    Fire.$on('AfterCreate', function () {
+      _this2.loadUsers();
+    });
+    // setInterval(()=>this.loadUsers(), 3000);
   }
 });
 
