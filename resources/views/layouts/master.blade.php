@@ -163,7 +163,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Starter Page</h1>
+     {{--        <h1 class="m-0 text-dark">Starter Page</h1> --}}
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -180,19 +180,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-8">
+          <div class="col-lg-12">
 
-            <div class="card card-primary card-outline">
+   {{--          <div class="card card-primary card-outline">
               <div class="card-body">
-                <h5 class="card-title">Principal</h5>
+                <h5 class="card-title">Principal</h5> --}}
 
                 <router-view></router-view>
                 <vue-progress-bar></vue-progress-bar>
-              </div>
-            </div><!-- /.card -->
+{{--               </div>
+            </div> --}}<!-- /.card -->
           </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-4">
+          <!-- /.oculto -->
+{{--           <div class="col-lg-4">
             <div class="card">
               <div class="card-header">
                 <h5 class="m-0">Featured1</h5>
@@ -216,8 +216,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <a href="#" class="btn btn-primary">Go somewhere</a>
               </div>
             </div>
-          </div>
-          <!-- /.col-md-6 -->
+          </div> --}}
+          <!-- /.oculto -->
         </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
