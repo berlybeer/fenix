@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                   Feniz de redimiendo las zenizas
+                   Laravel
                 </div>
 
                 <div class="links">
