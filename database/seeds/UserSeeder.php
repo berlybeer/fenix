@@ -25,7 +25,6 @@ class UserSeeder extends Seeder
            	'name' => 'Berly Pumaccajia',
         	'email' => 'berly@pumacajia.com',
         	'password' => bcrypt('laravel'),
-
         	'role' => 'admin'
         ]);
 
