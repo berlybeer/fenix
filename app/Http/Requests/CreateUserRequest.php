@@ -30,7 +30,7 @@ class CreateUserRequest extends FormRequest
         return[
             'name' => 'required',
             'email' => ['required','email','unique:users,email'],
-            'password' => 'required|max:6',
+            'password' => 'required|min:6',
             'role' => ['nullable', Rule::in(Role::getList())],
             'bio' => 'required',
             'twitter' => 'url|nullable|present',
@@ -47,7 +47,7 @@ class CreateUserRequest extends FormRequest
             'email.required' => 'El campo email es obligatorio',
             'email.unique' => 'El campo email debe ser unico',
             'password.required' => 'El campo password es obligatorio',
-            'password.max' => 'El campo password debe tener máximo 6 caracteres',
+            'password.min' => 'El campo password debe tener máximo 6 caracteres',
         ];
     }
 
