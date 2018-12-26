@@ -3,13 +3,10 @@
 @section('title', "Editar usuario: {$user->id}")
 
 @section('content')
-	<div class="card w-75">
-		<div class="card-header">
-			<h4>Editar usuario</h4>	
-		</div>
-		<div class="card-body">
-			
-			@include('shared._errors')
+
+	@card
+		@slot('header', 'Editar usuario')
+		@include('shared._errors')
 
 			<form action="{{ url("/usuarios/$user->id")}}" method="POST">
 				{{method_fieLd('PUT')}}
@@ -25,10 +22,7 @@
 				</div>
 			</form>
 
-
-		</div>
-	</div>
-			
+	@endcard
 
 			
 
