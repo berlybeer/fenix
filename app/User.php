@@ -33,20 +33,6 @@ class User extends Authenticatable
         //
     ];
 
-    public static function createUser($data){
-        DB::transaction(function () use ($data){
-            $user = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => bcrypt($data['password'])
-            ]);
-
-            $user->profile()->create([
-                'bio' => $data['bio'],
-                'twitter' => $data['twitter'],
-            ]);
-        });
-    }
 
 
     public function profession() //profession + _id = profession_id
