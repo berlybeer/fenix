@@ -1,0 +1,287 @@
+[33mcommit e2585f386696fc95510686d86f80e52a3e063525[m[33m ([m[1;36mHEAD -> [m[1;32mhelpers[m[33m, [m[1;31morigin/helpers[m[33m)[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Fri Dec 28 23:14:12 2018 -0500
+
+    Compartir datos entre vistas de laravel con métodos helpers o objetos Responsable
+
+[33mcommit 5d089eb7543ce2572f6649582423c30366d4a802[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 26 10:16:02 2018 -0500
+
+    Compartir HTML en las vistas con componentes de Blade
+
+[33mcommit 092d1cfa38ef74154b1a55a48a6580be71706676[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 26 09:34:28 2018 -0500
+
+    Reutilizar plantillas y formularios
+
+[33mcommit 8e078d816fccefa9f75f64df9212249ea2600f8f[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Mon Dec 24 16:42:49 2018 -0500
+
+    Creación de pruebas End-To-End con Laravel Dusk
+
+[33mcommit 108014e45c02bd6e691ccc7a278dca95a8757d0a[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Mon Dec 24 15:30:16 2018 -0500
+
+    Creación de pruebas end to end con laravel dusk
+
+[33mcommit 611ee339e4ffef9acf9b52e8764a2b54b5175236[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Mon Dec 24 12:46:36 2018 -0500
+
+    Optimización y reorganización de pruebas automatizadas
+
+[33mcommit 112286b8d5bc70f950ff5bbc2c826c7a86feb3b8[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Fri Dec 21 19:10:00 2018 -0500
+
+    Trabajar con radios de formularios
+
+[33mcommit b945942f562970756a94975a89e564945d9552b2[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Fri Dec 21 12:33:45 2018 -0500
+
+    Validar y guardar relaciones muchos a muchos
+
+[33mcommit edda0d8112d15debc4b4ee25ede8bba5a44d3c92[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Fri Dec 21 10:47:37 2018 -0500
+
+    Generar checkboxes dinámicos
+
+[33mcommit f0844d9a322e433bdaf99aa7a701a72ec963ef65[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Fri Dec 21 00:33:57 2018 -0500
+
+    Select dinámicos con Laravel
+
+[33mcommit c480d17d36116d8c168ea6075d0c1c5b1df8d973[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 20 18:46:56 2018 -0500
+
+    Validar y guardar llaves foráneas
+
+[33mcommit 09a0d03b34e5f306e8ad6436ccd3d3f738133be9[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 20 17:07:47 2018 -0500
+
+    Trabajar con campos opcionales en Laravel
+
+[33mcommit 3ede7325a26eb250f7df47926abf5fa819f8b0ff[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 20 12:38:10 2018 -0500
+
+    Guardar un registro en varias tablas con eloquent
+
+[33mcommit d51b5176a8a55aa0b8db6432f4a0296fa3d6e55c[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 19 23:19:21 2018 -0500
+
+    Estilos de bootstrap al formulario
+
+[33mcommit c45672d59499562d39088fe77fa9f66be072e983[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 19 22:24:59 2018 -0500
+
+    Agregar estilos Bootstrap 4 al listado de usuarios
+
+[33mcommit 6e36b3a3814f57afa51bfe982a6942b896905e08[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 19 21:27:44 2018 -0500
+
+    Agregando enlaces al módulo de usuarios
+
+[33mcommit 47d86a8cf4af03bca7fad8b95ae7cda81a79c0b1[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 19 20:45:07 2018 -0500
+
+    Eliminar registros con Laravel y TDD
+
+[33mcommit d9c5e4c27ecf15c7959d17bdcbe443f27826f210[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sun Dec 16 22:34:00 2018 -0500
+
+    Validar que el email sea único
+
+[33mcommit 6a366887e1c4f3c77ff93212f2cad329a8c6eb17[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sun Dec 16 21:59:24 2018 -0500
+
+    Campo opcional de contraseña
+
+[33mcommit 898a6c781c5cd0389795dd48e05f3d85a613456e[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sun Dec 16 20:12:37 2018 -0500
+
+    Reglas de validacion
+
+[33mcommit 85ef85c921d9d09526b93a698535281d9e7adddc[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sun Dec 16 16:55:48 2018 -0500
+
+    Actualizacion de usuarios con Laravel(TDD)
+
+[33mcommit b8acf1dadb356f510bb8001fae8d83ca4e958ed0[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sun Dec 16 16:08:14 2018 -0500
+
+    Formulario para editar usuarios
+
+[33mcommit 603420ed7403d6d259350f4ceb0c80b0aac9b45c[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sat Dec 15 16:15:40 2018 -0500
+
+    Uso de multiples reglas de validacion
+
+[33mcommit 6eff4ec385c90dd72c60fc2145886623ef348e68[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sat Dec 15 12:07:05 2018 -0500
+
+    Validar datos de peticiones HTTP
+
+[33mcommit 831b9d1da5f330590bb426fb6932637901a1627f[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sat Dec 15 11:33:59 2018 -0500
+
+    Formulario para agregar usuarios
+
+[33mcommit 497d5e13e1b2ed0db057a491bc438f1a28a3b314[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sat Dec 15 10:08:14 2018 -0500
+
+    Creación de usuarios con laravel y TDD
+
+[33mcommit 418d601129d40eccbda91e3bab2b40fecef4857c[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Sat Dec 15 09:04:08 2018 -0500
+
+    Rutas con POST y proteccion contra ataques de tipo CSRF
+
+[33mcommit 7b12807d59f47361022872429e8ff4447fefa149[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Fri Dec 14 16:08:03 2018 -0500
+
+    Enlace de modelos a rutas
+
+[33mcommit 4318f7f6457ee75e02a0348e20803aebc68bceaa[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Fri Dec 14 01:48:30 2018 -0500
+
+    Manejo de errores 404
+
+[33mcommit 65a43e67ce7f89d130360ac4cf0bc79136ab5d59[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 13 22:46:51 2018 -0500
+
+    Generar URLs
+
+[33mcommit 7d8f6775256dbe80be29cb7cd6a4b60871f21cd0[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 13 12:56:05 2018 -0500
+
+    Detalles de Usuario con Laravel(CRUD)
+
+[33mcommit e78588b7cedf06a3a3b591c0c5d9bc886968e111[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 13 12:30:13 2018 -0500
+
+    Configuración y uso de la base de datos con Laravel y PHPUnit
+
+[33mcommit 34a038fa0ebe9d963672730d5e5a130445eb7bac[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 13 00:27:31 2018 -0500
+
+    Listado dinámico de Usuarios con Laravel(CRUD)
+
+[33mcommit b6c8fb3b6f906f3765cbb72fdb6c9d183ff19b24[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Thu Dec 13 00:06:17 2018 -0500
+
+    Model Factories
+
+[33mcommit 455d796daa8527b4a57afcf6251db9cb64235dc2[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 12 22:59:44 2018 -0500
+
+    Manejo de relaciones con el ORM Eloquent
+
+[33mcommit d7e443b0aab18040031fb499d03efcaf6f24ca82[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 12 17:55:50 2018 -0500
+
+    Manejo de atributos en Elocuqent ORM
+
+[33mcommit 2cafcce93e45d5b54c22a850df664981a60ee324[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 12 17:15:31 2018 -0500
+
+    Usando Eloquent ORM de forma interactiva con Tinker
+
+[33mcommit 27dab57ffd597a87ec91b2bb4aacc5da23cb80e1[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 12 16:09:54 2018 -0500
+
+    Eloquent ORM
+
+[33mcommit cb034382fe18d35c9a28f5edd0f03b88c1df1223[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 12 14:42:13 2018 -0500
+
+    Constructor de consultas SQL de Laravel
+
+[33mcommit ec3a47b589cb96ce1a76ffd039706a982d9784e5[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 12 12:56:08 2018 -0500
+
+    Insercion de datos con el uso de Seeders
+
+[33mcommit 0d1d97997235e8f91fb4b4cc1a218b4d81115e56[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Wed Dec 12 11:27:19 2018 -0500
+
+    Creación y asociación de tablas con el uso de migraciones y claves foráneas
+
+[33mcommit 95549f9a090a53ad9fd09ea0477324e2c4f84941[m
+Author: vagrant <vagrant@homestead>
+Date:   Wed Dec 12 15:16:28 2018 +0000
+
+    Moodificar tablas ya existentes usando migraciones
+
+[33mcommit 8493ac1894a37c50a9acb8f7cadf029098dbe9e1[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Tue Dec 11 11:40:41 2018 -0500
+
+    Layout con Blade
+
+[33mcommit 7650d8194db6e8c6ce9c7f4bd1a99a32bb16f797[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Tue Dec 11 10:01:31 2018 -0500
+
+    Plantillas con blade
+
+[33mcommit e695453310c8b0e0c7f1ba63f39c6eb445fcf8ce[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Tue Dec 11 01:57:47 2018 -0500
+
+    Vistas con laravel
+
+[33mcommit 7fccf25e03c4491a18fb68f13b0e688862f84ac4[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Tue Dec 11 01:20:11 2018 -0500
+
+    Controladores en laravel
+
+[33mcommit 8644d31b0f8f1c63ce4e7a1a2c47b3d7af2afe11[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Tue Dec 11 00:36:51 2018 -0500
+
+    Rutas con laravel
+
+[33mcommit 98ef901037700a9360c55f7ee3e9fb4400443f58[m
+Author: Berly Pumaccajia <b.pumacajia.cz@gmail.com>
+Date:   Mon Dec 10 23:53:53 2018 -0500
+
+    introduccion
