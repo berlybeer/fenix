@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Forms\UserForm;
-
 use App\Http\Requests\CreateUserRequest;
+use App\Http\Requests\UpdateUserRequest;
 use App\Profession;
 use App\Skill;
 use App\User;
@@ -61,37 +61,11 @@ class UserController extends Controller
 
 
 
-    public function update(User $user)
+    public function update(UpdateUserRequest $request, User $user)
     {
 
-        $data = request()->validate([
-            'name' => 'required',
-            'email' => ['required', 'email', Rule::unique('users')->ignore($user->id)],
-            'password' => '',
-            'role' => '',
-            'bio' => '',
-            'profession_id' => '',
-            'twitter' => '',
-            'skills' => '',
 
-        ]);
-
-
-        if($data['password'] != null){
-            $data['password'] = bcrypt($data['password']);
-        }else{
-            unset($data['password']);
-        }
-
-
-        $user->fill($data);
-        $user->role = $data['role'];
-        $user->save();
-
-        $user->profile->update($data);
-
-
-        $user->skills()->sync($data['skills'] ?? []);
+        $request->updateUser($user);
      
 
         return redirect()->route('users.show', ['user' => $user]);
