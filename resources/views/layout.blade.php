@@ -35,10 +35,10 @@
               <a class="nav-link" href="{{url("/usuarios")}}">Usuarios <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Link</a>
+              <a class="nav-link" href="{{url("/profesiones")}}">Profesiones</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link disabled" href="#">Disabled</a>
+              <a class="nav-link" href="{{url("/habilidades")}}">Habilidades</a>
             </li>
           </ul>
           <form class="form-inline mt-2 mt-md-0">

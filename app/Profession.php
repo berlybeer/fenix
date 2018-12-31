@@ -10,9 +10,9 @@ class Profession extends Model
     // public $timestamps = false;
     protected $fillable = ['title'];
 
-    public function users()
+    public function profiles()
     {
-    	return $this->hasMany(User::class);
+    	return $this->hasMany(UserProfile::class);
     }
     
 }
