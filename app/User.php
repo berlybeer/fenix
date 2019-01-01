@@ -3,12 +3,16 @@
 namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
 
 class User extends Authenticatable
 {
+
+    use SoftDeletes;
+    
     use Notifiable;
 
     /**
@@ -47,9 +51,7 @@ class User extends Authenticatable
 
     public function profile()
     {
-        return $this->hasOne(UserProfile::class)->withDefault([
-            'bio' => 'Programador'
-        ]);
+        return $this->hasOne(UserProfile::class)->withDefault();
     }
 
     public static function findByEmail($email)
