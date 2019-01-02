@@ -22,6 +22,11 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
+    public function getPerPage()
+    {
+       return parent::getPerPage() * 2;
+    }
+
     /**
      * The attributes that should be hidden for arrays.
      *
