@@ -3,21 +3,26 @@
 namespace App\Http\Controllers;
 
 use App\Http\Forms\UserForm;
-use App\Http\Requests\CreateUserRequest;
-use App\Http\Requests\UpdateUserRequest;
-use App\Profession;
-use App\Skill;
-use App\User;
+use App\Http\Requests\{CreateUserRequest, UpdateUserRequest};
+use App\{Profession, Skill, User};
 use App\UserProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Illuminate\Validation\Rule;
+
 
 class UserController extends Controller
 {
     public function index()
     {
-    	$users = User::orderByDesc('created_at')->paginate();
+    	$users = User::query()
+            ->when(request('search'), function ($query, $search){
+                $query->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
+            })
+            ->orderByDesc('created_at')
+            ->paginate();
+
+        // dd($users);
 
     	$title = 'Listado de usuarios';
   
