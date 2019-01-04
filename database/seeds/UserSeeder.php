@@ -25,12 +25,9 @@ class UserSeeder extends Seeder
 
         $user = $this->createAdmin();
 
-
-        foreach(range(1,999) as $i){
-            
+        foreach(range(1,999) as $i){           
             $this->createRandomUser();
         }
-
     }
 
     protected function fetchRelations()
