@@ -16,8 +16,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Blade::component('shared._card', 'card');
-        Paginator::defaultSimpleView('shared.simple-pagination');
-        Paginator::defaultView('shared.pagination');
+
     }
 
     /**

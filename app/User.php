@@ -22,11 +22,6 @@ class User extends Authenticatable
      */
     protected $guarded = [];
 
-    public function getPerPage()
-    {
-       return parent::getPerPage() * 2;
-    }
-
     /**
      * The attributes that should be hidden for arrays.
      *
@@ -40,14 +35,6 @@ class User extends Authenticatable
         //
     ];
 
-
-
-    public function profession() //profession + _id = profession_id
-    {
-        return $this->belongsTo(Profession::class);
-        //si tabla de la bd no cumple con esta convencion la pasamos como segundo argumento:
-        //return $this->belongsTo(Profession::class, 'id_profession')
-    }
 
     public function skills()
     {
@@ -64,7 +51,6 @@ class User extends Authenticatable
 
         return static::where(compact('email'))->first();
     }
-
 
 
     public function isAdmin()

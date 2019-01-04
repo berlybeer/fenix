@@ -1,6 +1,7 @@
 <?php
 
 use App\Profession;
+use App\Skill;
 use App\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -19,23 +20,30 @@ class UserSeeder extends Seeder
     	// 	'title' => 'Desarrollador back-end',
     	// ]);
 
-    	$professionId = Profession::where('title','Desarrollador Back-end')->value('id');
+    	$professions = Profession::all();
+        $skills = Skill::all();
 
         $user = factory(User::class)->create([
            	'name' => 'Berly Pumaccajia',
         	'email' => 'berly@pumacajia.com',
         	'password' => bcrypt('laravel'),
-        	'role' => 'admin'
+        	'role' => 'admin',
+            'created_at' => now()->addDay(),
         ]);
 
         $user->profile()->create([
-            'bio' => 'programador, profesor, editor, escritor',
-            'profession_id' => $professionId,
+            'bio' => 'Programador, profesor, editor, escritor',
+            'profession_id' => $professions->firstWhere('title','Desarrollador back-end')->id,
         ]);
       
-        factory(User::class, 999)->create()->each(function($user){
+        factory(User::class, 999)->create()->each(function($user) use ($professions, $skills){
+            $randomSkills = $skills->random(rand(0, 7));
+
+            $user->skills()->attach($randomSkills);
+            
             factory(\App\UserProfile::class)->create([
                 'user_id' => $user->id,
+                'profession_id' => rand(0, 2) ? $professions->random()->id : null,
             ]);
         });
 
