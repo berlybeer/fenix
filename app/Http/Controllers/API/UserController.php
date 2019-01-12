@@ -4,6 +4,7 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use App\User;
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 
@@ -64,7 +65,7 @@ class UserController extends Controller
         if($request->photo){
 
             $name = time().'.'. explode('/', explode(':', substr($request->photo, 0, strpos($request->photo, ';')))[1])[1];
-
+            
             \Image::make($request->photo)->save(public_path('img/profile/').$name);
         }
         // return ['message' => "Success"];
