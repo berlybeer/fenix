@@ -409,7 +409,7 @@
                       </div>
                       <div class="form-group">
                           <div class="col-sm-offset-2 col-sm-12">
-                          <button type="submit" class="btn btn-success">Update</button>
+                          <button @click.prevent="updateInfo" type="submit" class="btn btn-success">Update</button>
                           </div>
                       </div>
                     </form>
@@ -444,6 +444,15 @@
             console.log('Component mounted.')
         },
         methods:{
+          updateInfo(){
+            this.form.put('api/profile')
+            .then(()=>{
+
+            })
+            .catch(()=>{
+
+            });
+          },
           updateProfile(e){
             //console.log('uploading');
             let file = e.target.files[0];

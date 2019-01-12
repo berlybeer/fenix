@@ -58,6 +58,19 @@ class UserController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+    public function updateProfile(Request $request)
+    {
+        $user = auth('api')->user();
+        return $request->photo;
+        // return ['message' => "Success"];
+    }
+
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function profile()
     {
         return auth('api')->user();
