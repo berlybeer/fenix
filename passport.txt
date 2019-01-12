@@ -3,3 +3,14 @@ Client Secret: 3VsXazOEzMzTepSj6XgmFlXxHBQkTQmkYoXell1j
 Password grant client created successfully.
 Client ID: 2
 Client Secret: ysO7GIZDON7SRSExnJw5LWZXbW3Uc9yrw45hmRUp
+
+
+$ php artisan passport:install
+Encryption keys generated successfully.
+Personal access client created successfully.
+Client ID: 1
+Client secret: 0ov3wqkwJw2vanP1wnBZre1mpldfoezymdac11yi
+Password grant client created successfully.
+Client ID: 2
+Client secret: AiOKhRV4PEVcJpFGs2kWBbPEI5pJOXORsfsv0Z4L
+
