@@ -71779,7 +71779,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
@@ -71815,7 +71814,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
       //console.log('uploading');
       var file = e.target.files[0];
-      console.log(file);
+      // console.log(file);
       var reader = new FileReader();
       if (file['size'] < 2111775) {
         reader.onloadend = function (file) {
@@ -71951,7 +71950,25 @@ var render = function() {
                       ])
                     ]),
                     _vm._v(" "),
-                    _vm._m(5),
+                    _c("div", { staticClass: "form-group" }, [
+                      _c(
+                        "label",
+                        {
+                          staticClass: "col-sm-2 control-label",
+                          attrs: { for: "inputExperience" },
+                          model: {
+                            value: _vm.form.bio,
+                            callback: function($$v) {
+                              _vm.$set(_vm.form, "bio", $$v)
+                            },
+                            expression: "form.bio"
+                          }
+                        },
+                        [_vm._v("Experience")]
+                      ),
+                      _vm._v(" "),
+                      _vm._m(5)
+                    ]),
                     _vm._v(" "),
                     _c("div", { staticClass: "form-group" }, [
                       _c(
@@ -71989,11 +72006,32 @@ var render = function() {
                         { staticClass: "col-sm-12" },
                         [
                           _c("input", {
+                            directives: [
+                              {
+                                name: "model",
+                                rawName: "v-model",
+                                value: _vm.form.password,
+                                expression: "form.password"
+                              }
+                            ],
                             staticClass: "form-control",
                             attrs: {
                               type: "password",
                               id: "password",
                               placeholder: "Passport"
+                            },
+                            domProps: { value: _vm.form.password },
+                            on: {
+                              input: function($event) {
+                                if ($event.target.composing) {
+                                  return
+                                }
+                                _vm.$set(
+                                  _vm.form,
+                                  "password",
+                                  $event.target.value
+                                )
+                              }
                             }
                           }),
                           _vm._v(" "),
@@ -72622,22 +72660,11 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "form-group" }, [
-      _c(
-        "label",
-        {
-          staticClass: "col-sm-2 control-label",
-          attrs: { for: "inputExperience" }
-        },
-        [_vm._v("Experience")]
-      ),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-sm-10" }, [
-        _c("textarea", {
-          staticClass: "form-control",
-          attrs: { id: "inputExperience", placeholder: "Experience" }
-        })
-      ])
+    return _c("div", { staticClass: "col-sm-10" }, [
+      _c("textarea", {
+        staticClass: "form-control",
+        attrs: { id: "inputExperience", placeholder: "Experience" }
+      })
     ])
   },
   function() {

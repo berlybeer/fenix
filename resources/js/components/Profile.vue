@@ -362,7 +362,7 @@
                         </div>
                       </div>
                       <div class="form-group">
-                        <label for="inputExperience" class="col-sm-2 control-label">Experience</label>
+                        <label for="inputExperience" v-model="form.bio"  class="col-sm-2 control-label">Experience</label>
 
                         <div class="col-sm-10">
                           <textarea class="form-control" id="inputExperience" placeholder="Experience"></textarea>
@@ -387,12 +387,11 @@
                           <label for="password" class="col-sm-12 control-label">Passport (leave empty if not changing)</label>
 
                           <div class="col-sm-12">
-                          <input type="password"
-                            
+                          <input type="password" 
+                              v-model="form.password" 
                               class="form-control"
                               id="password"
-                              placeholder="Passport"
-                              
+                              placeholder="Passport"  
                           >
                            <has-error :form="form" field="password"></has-error>
                           </div>
@@ -457,7 +456,7 @@
           updateProfile(e){
             //console.log('uploading');
             let file = e.target.files[0];
-            console.log(file);
+            // console.log(file);
             let reader = new FileReader();
                 if(file['size'] < 2111775){
                   reader.onloadend = (file) => {
