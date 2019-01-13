@@ -80,7 +80,7 @@
                       </div> 
 
                       <div class="form-group">
-                        <input v-model="form.email" type="email" name="email"
+                        <input v-model="form.email" name="email"
                           placeholder="Email Address" 
                           class="form-control" :class="{ 'is-invalid': form.errors.has('email') }">
                         <has-error :form="form" field="email"></has-error>
