@@ -34,7 +34,7 @@ class UserSeeder extends Seeder
         	'email' => 'berly@pumacajia.com',
         	'password' => bcrypt('laravel'),
         	'profession_id' => $professionId,
-        	'is_admin' => true
+        	'type' => 'admin'
         ]);
 
         factory(User::class)->create([
