@@ -59,6 +59,10 @@
             <!-- /.card -->
           </div>
         </div>
+
+        <div v-if="!$gate.isAdmin()">
+          <not-found></not-found>
+        </div>
         <!-- Modal -->
             <div class="modal fade" id="addNew" tabindex="-1" role="dialog" aria-labelledby="addNewLabel" aria-hidden="true">
               <div class="modal-dialog modal-dialog-centered" role="document">
@@ -123,7 +127,8 @@
                 </div>
               </div>
             </div>
-       </div>
+    </div>
+
 
 
 </template>
