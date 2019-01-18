@@ -12,6 +12,7 @@
     
     @include('users._filters')
     @if ($users->isNotEmpty())
+    <p>Viendo página {{ $users->currentPage() }} de {{$users->lastPage()}}</p>
    
 
     <div class="table-responsive-lg">

@@ -20,6 +20,8 @@ class UserController extends Controller
             ->orderByDesc('created_at')
             ->paginate();
 
+            $users->appends(request(['search']))->fragment('table');
+
     	$title = 'Listado de usuarios';
   
     	return view('users.index' ,compact('title', 'users'));
