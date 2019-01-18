@@ -42,19 +42,13 @@ class SearchUsersTest extends TestCase
         ]);
 
         $ellie = factory(User::class)->create([
-            'name' => 'José',
-
-        ]);
-
-
-        factory(User::class)->create([
             'name' => 'Ellie'
         ]);
 
         $this->get('/usuarios?search=Jo')
         	->assertStatus(200)
         	->assertViewHas('users' , function($users) use ($joel, $ellie){
-        		return $users->contains($joel) && $users->contains($ellie);
+        		return $users->contains($joel) && !$users->contains($ellie);
         	});
 
     }

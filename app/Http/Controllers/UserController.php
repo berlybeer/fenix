@@ -15,6 +15,7 @@ class UserController extends Controller
     public function index()
     {
     	$users = User::query()
+            ->with('team','skills', 'profile')
             ->search(request('search'))
             ->orderByDesc('created_at')
             ->paginate();
