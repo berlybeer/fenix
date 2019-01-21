@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Laravel\Scout\Searchable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\DB;
@@ -13,7 +14,7 @@ class User extends Authenticatable
 
     use SoftDeletes;
     
-    use Notifiable;
+    use Notifiable,SoftDeletes, Searchable;
 
     /**
      * The attributes that are mass assignable.
@@ -63,29 +64,38 @@ class User extends Authenticatable
         return $this->role == 'Admin';
     }
 
-    public function scopeSearch($query, $search)
+    public function toSearchableArray()
     {
-        if(empty($search)){
-            return;
-        }
-        $query->when(request('team'), function($query, $team){
-            if($team === 'with_team'){
-                $query->has('team');
-            }elseif($team === 'without_team'){
-                $query->doesntHave('team');
-            }
-        })
-        ->when($search, function ($query, $search){
-            $query->where(function ($query) use ($search){
-                $query->where(DB::raw('CONCAT(first_name, " ", last_name)'), 'like', "%{$search}%")
-                    ->orWhere('email', 'like', "%{$search}%")
-                    ->orWhereHas('team', function($query) use ($search){
-                        $query->where('name', 'like', "%{$search}%");
-                    });
-            });
-
-        });
+        return [
+           'name' => $this->name,
+           'email' => $this->email,
+           'team' => $this->team->name,
+        ];
     }
+
+    // public function scopeSearch($query, $search)
+    // {
+    //     if(empty($search)){
+    //         return;
+    //     }
+    //     $query->when(request('team'), function($query, $team){
+    //         if($team === 'with_team'){
+    //             $query->has('team');
+    //         }elseif($team === 'without_team'){
+    //             $query->doesntHave('team');
+    //         }
+    //     })
+    //     ->when($search, function ($query, $search){
+    //         $query->where(function ($query) use ($search){
+    //             $query->where(DB::raw('CONCAT(first_name, " ", last_name)'), 'like', "%{$search}%")
+    //                 ->orWhere('email', 'like', "%{$search}%")
+    //                 ->orWhereHas('team', function($query) use ($search){
+    //                     $query->where('name', 'like', "%{$search}%");
+    //                 });
+    //         });
+
+    //     });
+    // }
 
 
     public function getNameAttribute()

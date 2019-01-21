@@ -14,13 +14,15 @@ class UserController extends Controller
 {
     public function index()
     {
-    	$users = User::query()
-            ->with('team','skills', 'profile')
-            ->search(request('search'))
-            ->orderByDesc('created_at')
-            ->paginate();
+        if(request('search')){
+            $q = User::search(request('search'));
+        }else{
+            $q = User::query();
+        }
+    	$users = $q->paginate()
+            ->appends(request(['search']));
 
-            $users->appends(request(['search']))->fragment('table');
+        $users->load('team');
 
     	$title = 'Listado de usuarios';
   
