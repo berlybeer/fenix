@@ -1,0 +1,14 @@
+[
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/fenix.test\/images\/styde.png - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1547855067172
+    },
+    {
+        "level": "SEVERE",
+        "message": "http:\/\/fenix.test\/images\/styde.png - Failed to load resource: the server responded with a status of 404 (Not Found)",
+        "source": "network",
+        "timestamp": 1547855071079
+    }
+]
