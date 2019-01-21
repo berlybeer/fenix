@@ -21,6 +21,12 @@ class UserProfileTest extends TestCase
 		'twitter' => 'https://twitter.com/sergio',
 	];
 
+    public function setUp()
+    {
+        parent::setUp();
+        $this->markTestIncomplete();
+    }
+
 
 
     /**

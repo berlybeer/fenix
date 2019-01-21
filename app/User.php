@@ -77,7 +77,7 @@ class User extends Authenticatable
         })
         ->when($search, function ($query, $search){
             $query->where(function ($query) use ($search){
-                $query->where('name', 'like', "%{$search}%")
+                $query->where(DB::raw('CONCAT(first_name, " ", last_name)'), 'like', "%{$search}%")
                     ->orWhere('email', 'like', "%{$search}%")
                     ->orWhereHas('team', function($query) use ($search){
                         $query->where('name', 'like', "%{$search}%");
@@ -85,5 +85,11 @@ class User extends Authenticatable
             });
 
         });
+    }
+
+
+    public function getNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }

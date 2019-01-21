@@ -17,7 +17,9 @@ class ShowUsersTest extends TestCase
     {
 
         $user = factory(User::class)->create([
-            'name' => 'Duilio Palacios'
+            'first_name' => 'Duilio',
+            'last_name' => 'Palacios'
+
         ]);
 
         $this->get("/usuarios/{$user->id}")
